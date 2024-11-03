@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Teori</title>
+  <style>
+    /* Mode tampilan rapi */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .content {
+      margin: 20px 0;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    h3 {
+      color: #0056b3;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    /* Mode tampilan berantakan */
+    .messy-mode {
+      background-color: #9400D3;
+      color: #00008B;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    .messy-mode h1 {
+      color: #ff0000;
+    }
+
+    .messy-mode h2 {
+      color: #ff8800;
+    }
+
+    .messy-mode h3 {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol untuk mengubah mode tampilan -->
+  <button onclick="setNeatMode()">Mode Rapi</button>
+  <button onclick="setMessyMode()">Mode Berantakan</button>
+
+  <!-- Judul dan Sub Judul -->
+  <h1>LAPORAN TEORI</h1>
+  <h2>M.Rafif Soniansyah | 202331018</h2>
+
+  <!-- Isi Laporan -->
+  <div class="content" id="content1">
+    <h3>Soal No 1</h3>
+    <button onclick="hideContent('content1')">Sembunyikan</button>
+    <button onclick="showContent('content1')">Tampilkan</button>
+    <div class="content-body">
+      <p><b>Menggunakan HTML, CSS serta JavaScript dalam pemrograman web?</b></p>
+      <ul>
+        <li><b>HTML (HyperText Markup Language)</b></li>
+        <p>HTML adalah fondasi dari setiap halaman web. Fungsi utamanya adalah menyediakan struktur dasar dan konten, seperti judul, paragraf, gambar, dan tautan. HTML menentukan layout awal dan elemen-elemen yang akan ditampilkan kepada pengguna. Dengan HTML, kita dapat menambahkan elemen-elemen penting seperti formulir, tabel, atau daftar yang membantu menyampaikan informasi kepada pengguna.</p>
+        
+        <li><b>CSS (Cascading Style Sheets)</b></li>
+        <p>CSS bertanggung jawab atas tampilan atau style dari halaman web. Dengan CSS, pengembang dapat mengontrol aspek visual, seperti warna, tata letak, ukuran font, dan posisi elemen. CSS membantu memisahkan tampilan visual dari konten (yang diatur oleh HTML), sehingga memungkinkan pengembang untuk mendesain halaman web yang lebih konsisten dan mudah dikelola. CSS juga mendukung responsive design, yaitu desain yang menyesuaikan dengan ukuran layar perangkat yang digunakan, sehingga halaman web tetap terlihat baik di desktop, tablet, maupun smartphone.</p>
+
+        <li><b>JavaScript</b></li>
+        <p>JavaScript adalah bahasa pemrograman yang membuat halaman web menjadi interaktif. Dengan JavaScript, kita dapat menambahkan fungsionalitas seperti tombol yang merespons klik pengguna, animasi, dan validasi formulir. JavaScript juga memungkinkan pengembangan single-page applications (SPA) dengan menggunakan kerangka kerja seperti React, Angular, atau Vue, sehingga interaksi antar halaman bisa lebih cepat tanpa harus memuat ulang seluruh halaman.</p>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content" id="content2">
+    <h3>Soal No 2</h3>
+    <button onclick="hideContent('content2')">Sembunyikan</button>
+    <button onclick="showContent('content2')">Tampilkan</button>
+    <div class="content-body">
+      <p><b>HTML, CSS serta JavaScript dapat diintegrasikan dalam pemrograman web?</b></p>
+      <ul>
+        <li><b>Penggunaan Langsung dalam File HTML</b></li>
+        <p><b>CSS di dalam HTML:</b> CSS dapat diintegrasikan dalam file HTML menggunakan elemen style di dalam head.</p>
+        <p><b>JavaScript di dalam HTML:</b> JavaScript dapat ditambahkan langsung menggunakan elemen script, biasanya diletakkan di bagian bawah body untuk memastikan elemen HTML dimuat terlebih dahulu.</p>
+
+        <li><b>File Terpisah (Modularisasi)</b></li>
+        <p>Menggunakan file terpisah untuk HTML, CSS, dan JavaScript membuat kode lebih terorganisir dan mudah dikelola. Ini juga memungkinkan pemuatan ulang yang lebih cepat, karena file CSS dan JavaScript dapat di-cache oleh browser.</p>
+
+        <li><b>Manipulasi DOM dengan JavaScript</b></li>
+        <p>JavaScript memungkinkan pengembang untuk memodifikasi elemen HTML secara dinamis. Dengan memanipulasi DOM (Document Object Model), kita dapat menambahkan, mengubah, atau menghapus elemen pada halaman.</p>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Fungsi untuk menyembunyikan konten berdasarkan ID
+    function hideContent(id) {
+      alert("Sembunyikan Soal?.");
+      const contentBody = document.querySelector(`#${id} .content-body`);
+      if (contentBody) {
+        contentBody.style.display = "none";
+      }
+    }
+
+    // Fungsi untuk menampilkan konten kembali berdasarkan ID
+    function showContent(id) {
+      alert("Tampilkan Soal?");
+      const contentBody = document.querySelector(`#${id} .content-body`);
+      if (contentBody) {
+        contentBody.style.display = "block";
+      }
+    }
+
+    // Fungsi untuk mengaktifkan mode tampilan rapi
+    function setNeatMode() {
+      alert("Ubah Ke Mode Rapi?")
+      document.body.classList.remove("messy-mode");
+    }
+
+    // Fungsi untuk mengaktifkan mode tampilan berantakan
+    function setMessyMode() {
+      alert("Ubah Ke Mode Berantakan?")
+      document.body.classList.add("messy-mode");
+    }
+  </script>
+
+</body>
+</html>
